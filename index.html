@@ -1,5 +1,6 @@
 ---
 layout: default
+title: luff's blog
 ---
 <main class="container">
   <div class="row">
@@ -14,8 +15,9 @@ layout: default
       {% for post in paginator.posts %}
       <article>
         <h1>{{ post.title }}</h1>
+        <small>{% include post_date.html %}</small>
         <p>{{ post.excerpt }}</p>
-        <a href="{{ site.baseurl }}/{{ post.url }}">[ Read ]</a>
+        <a href="{{ post.url }}">[ Read ]</a>
       </article>
       {% endfor %}
       {% include buttons.html %}
