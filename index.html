@@ -15,7 +15,9 @@ title: luff's blog
       {% for post in paginator.posts %}
       <article>
         <h1>{{ post.title }}</h1>
-        <small>{% include post_date.html %}</small>
+        <small datetime="{{ post.date | date: '%Y-%m-%d %H:%i' }}" pubdate>
+            {{ post.date | date: '%Y-%m-%d %H:%i' }}
+        </small>
         <p>{{ post.excerpt }}</p>
         <a href="{{ post.url }}">[ Read ]</a>
       </article>
